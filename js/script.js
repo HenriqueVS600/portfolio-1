@@ -1,75 +1,18 @@
-let menuBtn = document.querySelector('#menu-btn');
-let navbar = document.querySelector('.header .flex .navbar');
+const header = document.querySelector("header");
 
-menuBtn.onclick = () =>{
-	menuBtn.classList.toggle('fa-times');
+window.addEventListener("scroll", function() {
+	header.classList.toggle("sticky", window.scrollY > 0)
+});
+
+let menu = document.querySelector("#menu-icon");
+let navbar = document.querySelector(".navbar");
+
+menu.onclick = () => {
+	menu.classList.toggle('bx-x');
 	navbar.classList.toggle('active');
-}
+};
 
-window.onscroll = () =>{
-   menuBtn.classList.remove('fa-times');
-   navbar.classList.remove('active');
-}
-
-var swiper = new Swiper(".course-slider", {
-   spaceBetween: 20,
-   grabCursor:true,
-   loop:true,
-   pagination: {
-     el: ".swiper-pagination",
-     clickable: true,
-   },
-   breakpoints: {
-      540: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-   },
-});
-
-var swiper = new Swiper(".teachers-slider", {
-   spaceBetween: 20,
-   grabCursor:true,
-   loop:true,
-   pagination: {
-     el: ".swiper-pagination",
-     clickable: true,
-   },
-   breakpoints: {
-      540: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-   },
-});
-
-var swiper = new Swiper(".reviews-slider", {
-   spaceBetween: 20,
-   grabCursor:true,
-   loop:true,
-   pagination: {
-     el: ".swiper-pagination",
-     clickable: true,
-   },
-   breakpoints: {
-      540: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-   },
-});
+window.onscroll = () => {
+	menu.classList.remove('bx-x');
+	navbar.classList.remove('active');
+};
